@@ -1,0 +1,17 @@
+
+Implementation and benchmarks of the two methods of generating unique numbers
+described in this blog post:
+  http://nf.id.au/concurrency-patterns-a-source-of-unique-numbe
+
+The output of 'gomake bench':
+
+uniq.BenchmarkMutex    10000000  173 ns/op
+uniq.BenchmarkChannel  10000000  224 ns/op
+
+The channel-based approach takes 1.29x the time of the mutex-based approach.
+
+Depending on the specific application, and your opinion on the aesthetics
+of the two approaches, this can be an acceptable tradeoff (it is, IMO).
+
+Andrew Gerrand <nf@wh3rd.net>
+
