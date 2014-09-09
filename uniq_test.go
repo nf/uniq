@@ -1,19 +1,19 @@
 package uniq
 
 import (
-    "testing"
+	"testing"
 )
 
 func BenchmarkMutex(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-        uniqFn()
-    }
+	for i := 0; i < b.N; i++ {
+		uniqFn()
+	}
 }
 
 func BenchmarkChannel(b *testing.B) {
-    for i := 0; i < b.N; i++ {
-        <-uniq
-    }
+	for i := 0; i < b.N; i++ {
+		<-uniq
+	}
 }
 
-func TestFoo(t *testing.T) { }
+func TestFoo(t *testing.T) {}
